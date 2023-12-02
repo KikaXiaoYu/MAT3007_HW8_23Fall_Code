@@ -1,0 +1,140 @@
+
+[Ziyu] : Global Newton's Method
+[Ziyu] : INIT_POINT -> [3 3]   
+[Ziyu] : TOLERANCE -> 1e-05    
+[Ziyu] : using newton's method at iter 1
+[Ziyu] : alpha_k == 1 at iter 1
+[Ziyu] : using newton's method at iter 2
+[Ziyu] : alpha_k == 1 at iter 2
+[Ziyu] : using newton's method at iter 3
+[Ziyu] : alpha_k == 1 at iter 3
+[Ziyu] : using newton's method at iter 4
+[Ziyu] : alpha_k == 1 at iter 4
+[Ziyu] : using newton's method at iter 5
+[Ziyu] : alpha_k == 1 at iter 5
+[Ziyu] : using newton's method at iter 6
+[Ziyu] : alpha_k == 1 at iter 6
+[Ziyu] : using newton's method at iter 7
+[Ziyu] : alpha_k == 1 at iter 7
+[Ziyu] : using newton's method at iter 8
+[Ziyu] : alpha_k == 1 at iter 8
+[Ziyu] : using newton's method at iter 9
+[Ziyu] : alpha_k == 1 at iter 9
+[Ziyu] : using newton's method at iter 10
+[Ziyu] : alpha_k == 1 at iter 10
+[Ziyu] : The iteration count is: 10
+[Ziyu] : The result of x is: [ 5.14177371e-17 -2.11810862e-17]
+[Ziyu] : The result of f(x) is: 3.24196824174581E-33
+
+
+[Ziyu] : Global Newton's Method
+[Ziyu] : INIT_POINT -> [-3 -3]
+[Ziyu] : TOLERANCE -> 1e-05
+[Ziyu] : using newton's method at iter 1
+[Ziyu] : alpha_k == 1 at iter 1
+[Ziyu] : using newton's method at iter 2
+[Ziyu] : alpha_k == 1 at iter 2
+[Ziyu] : using newton's method at iter 3
+[Ziyu] : alpha_k == 1 at iter 3
+[Ziyu] : using newton's method at iter 4
+[Ziyu] : alpha_k == 1 at iter 4
+[Ziyu] : using newton's method at iter 5
+[Ziyu] : alpha_k == 1 at iter 5
+[Ziyu] : using newton's method at iter 6
+[Ziyu] : alpha_k == 1 at iter 6
+[Ziyu] : using newton's method at iter 7
+[Ziyu] : alpha_k == 1 at iter 7
+[Ziyu] : using newton's method at iter 8
+[Ziyu] : alpha_k == 1 at iter 8
+[Ziyu] : using newton's method at iter 9
+[Ziyu] : alpha_k == 1 at iter 9
+[Ziyu] : using newton's method at iter 10
+[Ziyu] : alpha_k == 1 at iter 10
+[Ziyu] : The iteration count is: 10
+[Ziyu] : The result of x is: [ 5.06188006e-18 -7.14133561e-19]
+[Ziyu] : The result of f(x) is: 2.63026120621601E-35
+
+
+[Ziyu] : Global Newton's Method
+[Ziyu] : INIT_POINT -> [ 3 -3]
+[Ziyu] : TOLERANCE -> 1e-05
+[Ziyu] : using newton's method at iter 1
+[Ziyu] : alpha_k == 1 at iter 1
+[Ziyu] : using newton's method at iter 2
+[Ziyu] : alpha_k == 1 at iter 2
+[Ziyu] : using newton's method at iter 3
+[Ziyu] : alpha_k == 1 at iter 3
+[Ziyu] : using newton's method at iter 4
+[Ziyu] : alpha_k == 1 at iter 4
+[Ziyu] : using newton's method at iter 5
+[Ziyu] : alpha_k == 1 at iter 5
+[Ziyu] : using newton's method at iter 6
+[Ziyu] : alpha_k == 1 at iter 6
+[Ziyu] : using newton's method at iter 7
+[Ziyu] : alpha_k == 1 at iter 7
+[Ziyu] : using newton's method at iter 8
+[Ziyu] : alpha_k == 1 at iter 8
+[Ziyu] : using newton's method at iter 9
+[Ziyu] : alpha_k == 1 at iter 9
+[Ziyu] : using newton's method at iter 10
+[Ziyu] : alpha_k == 1 at iter 10
+[Ziyu] : The iteration count is: 10
+[Ziyu] : The result of x is: [ 1.15378769e-15 -4.75586765e-16]
+[Ziyu] : The result of f(x) is: 1.63280306811208E-30
+
+
+[Ziyu] : Global Newton's Method
+[Ziyu] : INIT_POINT -> [-3  3]
+[Ziyu] : TOLERANCE -> 1e-05
+[Ziyu] : using newton's method at iter 1
+[Ziyu] : alpha_k == 1 at iter 1
+[Ziyu] : using newton's method at iter 2
+[Ziyu] : alpha_k == 1 at iter 2
+[Ziyu] : using newton's method at iter 3
+[Ziyu] : alpha_k == 1 at iter 3
+[Ziyu] : using newton's method at iter 4
+[Ziyu] : alpha_k == 1 at iter 4
+[Ziyu] : using newton's method at iter 5
+[Ziyu] : alpha_k == 1 at iter 5
+[Ziyu] : using newton's method at iter 6
+[Ziyu] : alpha_k == 1 at iter 6
+[Ziyu] : using newton's method at iter 7
+[Ziyu] : alpha_k == 1 at iter 7
+[Ziyu] : using newton's method at iter 8
+[Ziyu] : alpha_k == 1 at iter 8
+[Ziyu] : using newton's method at iter 9
+[Ziyu] : alpha_k == 1 at iter 9
+[Ziyu] : using newton's method at iter 10
+[Ziyu] : alpha_k == 1 at iter 10
+[Ziyu] : The iteration count is: 10
+[Ziyu] : The result of x is: [ 4.29249998e-20 -4.43368808e-21]
+[Ziyu] : The result of f(x) is: 1.86876573210501E-39
+
+
+[Ziyu] : Global Newton's Method
+[Ziyu] : INIT_POINT -> [3 3]
+[Ziyu] : TOLERANCE -> 1e-05
+[Ziyu] : using newton's method at iter 1
+[Ziyu] : alpha_k == 1 at iter 1
+[Ziyu] : using newton's method at iter 2
+[Ziyu] : alpha_k == 1 at iter 2
+[Ziyu] : using newton's method at iter 3
+[Ziyu] : alpha_k == 1 at iter 3
+[Ziyu] : using newton's method at iter 4
+[Ziyu] : alpha_k == 1 at iter 4
+[Ziyu] : using newton's method at iter 5
+[Ziyu] : alpha_k == 1 at iter 5
+[Ziyu] : using newton's method at iter 6
+[Ziyu] : alpha_k == 1 at iter 6
+[Ziyu] : using newton's method at iter 7
+[Ziyu] : alpha_k == 1 at iter 7
+[Ziyu] : using newton's method at iter 8
+[Ziyu] : alpha_k == 1 at iter 8
+[Ziyu] : using newton's method at iter 9
+[Ziyu] : alpha_k == 1 at iter 9
+[Ziyu] : using newton's method at iter 10
+[Ziyu] : alpha_k == 1 at iter 10
+[Ziyu] : The iteration count is: 10
+[Ziyu] : The result of x is: [ 5.14177371e-17 -2.11810862e-17]
+[Ziyu] : The result of f(x) is: 3.24196824174581E-33
+

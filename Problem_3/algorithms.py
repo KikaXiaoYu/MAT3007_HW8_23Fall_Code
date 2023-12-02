@@ -16,27 +16,13 @@ def grad(main_func, x_symbol, x_point) -> np.array:
     return (np.array(result))
 
 
-def hess(main_func, x_symbol, x_point) -> np.array:
-    gradient = [sp.diff(main_func, var) for var in x_symbol]
-    hessian = [[sp.diff(gradient[i], var)
-                for i in range(len(x_symbol))]for var in x_symbol]
-    point = [(x_symbol[i], x_point[i]) for i in range(len(x_symbol))]
-
-    result = [[float(i.subs(point)) for i in j] for j in hessian]
-
-    return np.array(result)
-
-
 def contourPlot(x_record, title_info):
-    # 准备数据
-    x = np.linspace(-2, 2, 50)
-    y = np.linspace(-2, 2, 50)
+    x = np.linspace(-4, 4, 50)
+    y = np.linspace(-4, 4, 50)
     x1, x2 = np.meshgrid(x, y)
     Z = 2*x1**4 + (2/3)*x1**3 + x1**2 - 2*(x1**2)*x2 + (4/3)*(x2**2)
-    # Z = 100 * (x2 - x1**2)**2 + (1-x1)**2
 
     level_lst = [0.1 * 2**i for i in range(20)]
-    # level_lst = [0.1 * 2**i for i in range(10)]
 
     contour_plot = plt.contour(x1, x2, Z, level_lst, alpha=0.5)
 
@@ -56,12 +42,11 @@ def contourPlot(x_record, title_info):
     plt.title(title_info)
     plt.xlabel('x1')
     plt.ylabel('x2')
-    plt.savefig('P4_figures/' + title_info + '.jpg')
+    plt.savefig('Problem_3/P3_figures/' + title_info + '.jpg')
     plt.show()
 
+
 # Gradient method with backtracking Armijo
-
-
 def gradient_method_backtracking_Armijo(
         main_func, grad, x_symbol, x0, tol, local_method_para):
 
@@ -89,7 +74,6 @@ def gradient_method_backtracking_Armijo(
         b = main_func.subs([(x_symbol[i], x_k[i])
                            for i in range(len(x_symbol))])
         c = gamma * np.dot(grad(main_func, x_symbol, x_k), d_k)
-
         while (a > b + c):
             alpha_k = theta * alpha_k
             a = main_func.subs([(x_symbol[i], (x_k + alpha_k * d_k)[i])
@@ -102,17 +86,9 @@ def gradient_method_backtracking_Armijo(
 
     while (np.linalg.norm(gradient) > tol):
         gradient = grad(main_func, x_symbol, x_k)
-        hessian = hess(main_func, x_symbol, x_k)
         d = -gradient
-        s_k = np.dot(np.linalg.inv(hessian), -gradient)
-
-        print()
-        print(- np.dot(gradient, s_k))
-        print(gamma1 * min(1, np.linalg.norm(s_k)**gamma2)
-              * np.linalg.norm(s_k)**2)
 
         alpha_k = backtrackingMethod(main_func, x_k, d, theta, gamma)
-        # print("current alpha:", alpha_k)
         x_k = x_k + alpha_k * d
         iter_count += 1
         x_record.append(x_k)
@@ -127,8 +103,7 @@ def gradient_method_backtracking_Armijo(
     print("[Ziyu] : The result of x is: {0}".format(x_res))
     print("[Ziyu] : The result of f(x) is: {0}".format(func_val))
     print()
-    title_info = "[Ziyu]_Backtracking_Armijo_with_init{0}_iter{1}".format(
-        str(x0), iter_count)
+    title_info = "[Ziyu]_Backtracking_Armijo_with_init{0}_iter{1}".format(str(x0), iter_count)
 
     contourPlot(x_record, title_info)
     return (x_res, func_val, x_record, y_record)
@@ -136,16 +111,15 @@ def gradient_method_backtracking_Armijo(
 # Gradient method with backtracking Adagrad
 
 
-# global newton's method
-def newton_glob(
+def gradient_method_backtracking_Adagrad(
         main_func, grad, x_symbol, x0, tol, local_method_para):
 
     x_k = x0
     gradient = grad(main_func, x_symbol, x_k)
     theta = local_method_para[0]
     gamma = local_method_para[1]
-    gamma1 = local_method_para[2]
-    gamma2 = local_method_para[3]
+    eps = local_method_para[2]
+    m = local_method_para[3]
 
     iter_count = 0
     x_record = [x_k]
@@ -153,24 +127,22 @@ def newton_glob(
                                 for i in range(len(x_symbol))])]
 
     print()
-    print("[Ziyu] : Global Newton's Method")
+    print("[Ziyu] : Gradient method with backtracking Adagrad")
+    print("[Ziyu] : m = {0}".format(m))
     print("[Ziyu] : INIT_POINT -> {0}".format(x0))
     print("[Ziyu] : TOLERANCE -> {0}".format(tol))
 
     # Backtracking method
     def backtrackingMethod(main_func, x_k, d_k, theta, gamma):
         alpha_k = 1
-        mor1 = x_k + np.dot(alpha_k, d_k)
-        a = main_func.subs([(x_symbol[i], mor1[i])
+        a = main_func.subs([(x_symbol[i], (x_k + alpha_k * d_k)[i])
                             for i in range(len(x_symbol))])
         b = main_func.subs([(x_symbol[i], x_k[i])
                            for i in range(len(x_symbol))])
-        c = gamma * alpha_k * np.dot(grad(main_func, x_symbol, x_k), d_k)
+        c = gamma * np.dot(grad(main_func, x_symbol, x_k), d_k)
         while (a > b + c):
             alpha_k = theta * alpha_k
-            mor1 = x_k + np.dot(alpha_k, d_k)
-
-            a = main_func.subs([(x_symbol[i], mor1[i])
+            a = main_func.subs([(x_symbol[i], (x_k + alpha_k * d_k)[i])
                                 for i in range(len(x_symbol))])
             b = main_func.subs([(x_symbol[i], x_k[i])
                                 for i in range(len(x_symbol))])
@@ -178,19 +150,26 @@ def newton_glob(
         return alpha_k
     # end of backtracking method
 
-    while (np.linalg.norm(gradient) > tol and iter_count < 1000):
+    while (np.linalg.norm(gradient) > tol):
         gradient = grad(main_func, x_symbol, x_k)
-        hessian = hess(main_func, x_symbol, x_k)
-        s_k = np.linalg.solve(hessian, -gradient)
-        com = gamma1 * min(1, np.linalg.norm(s_k)**gamma2) *  np.linalg.norm(s_k)**2
-        if (-np.dot(gradient, s_k) >= com):
-            d_k = s_k
-            # print("GA")
-        else:
-            d_k = -gradient
+        
+        v_lst = []
+        size = len(x_k)
+        for i in range(size):
+            start = max(0, iter_count-m)
+            end = iter_count
+            sums = 0
+            for j in range(start, end+1, 1):
+                sums += (grad(main_func, x_symbol, x_record[j])[i])**2
+            sums += eps
+            v_lst.append(np.sqrt(sums))
+        
+        D_k = np.diag(v_lst)
+        
+        d = -np.dot(np.linalg.inv(D_k), gradient)
 
-        alpha_k = backtrackingMethod(main_func, x_k, d_k, theta, gamma)
-        x_k = x_k + alpha_k * d_k
+        alpha_k = backtrackingMethod(main_func, x_k, d, theta, gamma)
+        x_k = x_k + alpha_k * d
         iter_count += 1
         x_record.append(x_k)
         y_record.append(main_func.subs([(x_symbol[i], x_k[i])
@@ -204,51 +183,7 @@ def newton_glob(
     print("[Ziyu] : The result of x is: {0}".format(x_res))
     print("[Ziyu] : The result of f(x) is: {0}".format(func_val))
     print()
-    title_info = "[Ziyu]_newton_glob_with_init{0}_iter{1}".format(
-        str(x0), iter_count)
+    title_info = "[Ziyu]_Backtracking_Adagrad_with_init{0}_iter{1}_m{2}".format(str(x0), iter_count, m)
 
     contourPlot(x_record, title_info)
     return (x_res, func_val, x_record, y_record)
-
-
-# Main
-if __name__ == "__main__":
-
-    x1, x2 = sp.symbols('x1 x2')
-
-    # main method parameters
-    main_func = 2*x1**4 + (2/3)*x1**3 + x1**2 - 2*(x1**2)*x2 + (4/3)*(x2**2)
-    # main_func = 100 * (x2 - x1**2)**2 + (1-x1)**2
-    x_symbol = np.array([x1, x2])
-    x0 = np.array([3, 3])
-    tol = 1e-7
-
-    # parameters
-    theta_BTM = 0.5
-    gamma_BTM = 1e-4
-    gamma1 = 1e-6
-    gamma2 = 0.1
-
-    backtracking_para = [theta_BTM, gamma_BTM]
-    GNT_method_para = [theta_BTM, gamma_BTM, gamma1, gamma2]
-
-    x_res, func_val, x_record, y_record = gradient_method_backtracking_Armijo(
-            main_func, grad, x_symbol, x0, tol, backtracking_para)
-
-    x_res, func_val, x_record, y_record = newton_glob(
-        main_func, grad, x_symbol, x0, tol, GNT_method_para)
-
-    # more init point
-    # x_point_list = [[-3, -3], [3, -3], [-3, 3], [3, 3]]
-    # for i in range(len(x_point_list)):
-    #     x0 = np.array(x_point_list[i])
-    #     x_res, func_val, x_record, y_record = newton_glob(
-    #         main_func, grad, x_symbol, x0, tol, GNT_method_para)
-
-    # x0 = [-3, -3]
-    # # m_lst = [5, 10, 15, 25]
-    # for i in range(len(m_lst)):
-    #     gamma_BTM = m_lst[i]
-    #     GNT_method_para = [theta_BTM, gamma_BTM, gamma1, gamma2]
-    #     x_res, func_val, x_record, y_record = newton_glob(
-    #         main_func, grad, x_symbol, x0, tol, GNT_method_para)

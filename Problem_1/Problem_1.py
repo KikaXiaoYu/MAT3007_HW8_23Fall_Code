@@ -1,7 +1,7 @@
 
-# Golden section method
-def goldenSectionMethod(func, x_l, x_r, tol, maxit):
-    phi = (3 - 5**0.5) / 2 # Golden ratio
+def golden_section_method(
+        func, x_l: float, x_r: float, tol: float, maxit: int):
+    phi = (3 - 5**0.5) / 2  # Golden ratio
     iter_count = 0
 
     while (abs(x_r - x_l) >= tol and iter_count < maxit):
@@ -15,18 +15,19 @@ def goldenSectionMethod(func, x_l, x_r, tol, maxit):
 
     x_res = (x_l + x_r) / 2
     func_val = func(x_res)
-    
+
     print("The result of x is: {0}".format(x_res))
     print("The result of f(x) is: {0}".format(func_val))
 
     return ((x_res, func_val))
 
-# 1-dimensional function
+
 def f(x):
     a = (1/4) * (x**2 - 1)**2
     b = (1/2) * (x - 2)**2
     res = a + b
     return res
+
 
 # Main
 if __name__ == "__main__":
@@ -34,12 +35,9 @@ if __name__ == "__main__":
     x_right = 2
     tol = 1e-5
     maxit = 100
-    x_res, func_val = goldenSectionMethod(f, x_left, x_right, tol, maxit)
+    x_res, func_val = golden_section_method(f, x_left, x_right, tol, maxit)
 
-    
-
-
-''' OUTPUT:
+'''
 The result of x is: 1.2599213332006465
-The result of f(x) is: 0.36011842515788134 
+The result of f(x) is: 0.36011842515788134
 '''
