@@ -187,3 +187,39 @@ def gradient_method_backtracking_Adagrad(
 
     contourPlot(x_record, title_info)
     return (x_res, func_val, x_record, y_record)
+
+
+def new_contourPlot(x_records, title_info):
+
+    x = np.linspace(-4, 4, 50)
+    y = np.linspace(-4, 4, 50)
+    x1, x2 = np.meshgrid(x, y)
+    Z = 2*x1**4 + (2/3)*x1**3 + x1**2 - 2*(x1**2)*x2 + (4/3)*(x2**2)
+
+    level_lst = [0.1 * 2**i for i in range(20)]
+
+    contour_plot = plt.contour(x1, x2, Z, level_lst, alpha=0.5)
+
+    plt.clabel(contour_plot, fontsize=10, colors=('k', 'r'))
+
+    colors = ['red', 'blue', 'green', 'purple']
+
+    for i in range(len(x_records)):
+        x_record = x_records[i]
+        data = np.array(x_record)
+        the_color = colors[i]
+        size = len(data)
+
+        for i in range(len(data)):
+            if i+1 != len(data):
+                plt.plot([data[i, 0], data[i+1, 0]],
+                         [data[i, 1], data[i+1, 1]], c=the_color, linewidth=1)
+        plt.scatter(data[1:size-2, 0], data[1:size-2, 1], c=the_color, s=10)
+        plt.scatter(data[0, 0], data[0, 1], c=the_color, s=50)
+        plt.scatter(data[size-1, 0], data[size-1, 1], c=the_color, s=50)
+
+    plt.title(title_info)
+    plt.xlabel('x1')
+    plt.ylabel('x2')
+    plt.savefig('Problem_3/P3_figures/' + title_info + '.jpg')
+    plt.show()

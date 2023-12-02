@@ -196,7 +196,7 @@ def new_contourPlot(x_records, title_info):
 
     plt.clabel(contour_plot, fontsize=10, colors=('k', 'r'))
 
-    colors = ['red', 'blue', 'green', 'pink']
+    colors = ['red', 'blue', 'green', 'purple']
 
     for i in range(len(x_records)):
         x_record = x_records[i]

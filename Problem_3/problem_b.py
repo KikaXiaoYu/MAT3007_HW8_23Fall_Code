@@ -25,10 +25,24 @@ if __name__ == "__main__":
 
     # more init point
     x_point_list = [[-3, -3], [3, -3], [-3, 3], [3, 3]]
+    
+    x_records = []
     for i in range(len(x_point_list)):
         x0 = np.array(x_point_list[i])
         x_res, func_val, x_record, y_record = gradient_method_backtracking_Armijo(
             main_func, grad, x_symbol, x0, tol, Armijo_method_para)
+        x_records.append(x_record)
+        
+    new_contourPlot(x_records, "[Ziyu]_backtracking_Armijo_all_in_one")
+    
+    
+    x_records = []
+    for i in range(len(x_point_list)):
+        x0 = np.array(x_point_list[i])
         x_res, func_val, x_record, y_record = gradient_method_backtracking_Adagrad(
             main_func, grad, x_symbol, x0, tol, Adagrad_method_para)
+        x_records.append(x_record)
+        
+    new_contourPlot(x_records, "[Ziyu]_backtracking_Adagrad_all_in_one")
+    
         
