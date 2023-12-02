@@ -1,0 +1,16 @@
+[Ziyu] : Gradient method with exact line search
+[Ziyu] : maxit_alpha = 100, tol_alpha = 1e-06, a_alpha = 2
+[Ziyu] : INIT_POINT -> [1 1]
+[Ziyu] : TOLERANCE -> 1e-05
+[Ziyu] : The iteration count is: 8
+[Ziyu] : The result of x is: [-1.89668870e-08 -1.18514685e-09]
+[Ziyu] : The result of f(x) is: 3.61615563043383E-16
+
+
+[Ziyu] : Gradient method with backtracking
+[Ziyu] : theta = 0.5, gamma = 0.1
+[Ziyu] : INIT_POINT -> [1 1]
+[Ziyu] : TOLERANCE -> 1e-05
+[Ziyu] : The iteration count is: 14
+[Ziyu] : The result of x is: [ 0.00000000e+00 -5.74956685e-07]
+[Ziyu] : The result of f(x) is: 4.40766919277909E-13

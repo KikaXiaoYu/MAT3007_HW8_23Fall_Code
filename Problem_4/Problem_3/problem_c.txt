@@ -1,0 +1,36 @@
+
+[Ziyu] : Gradient method with backtracking Adagrad
+[Ziyu] : m = 5
+[Ziyu] : INIT_POINT -> [-3, -3]
+[Ziyu] : TOLERANCE -> 1e-05
+[Ziyu] : The iteration count is: 22
+[Ziyu] : The result of x is: [-2.25411167e-08 -8.70669472e-08]
+[Ziyu] : The result of f(x) is: 1.06156397426448E-14
+
+
+[Ziyu] : Gradient method with backtracking Adagrad
+[Ziyu] : m = 10
+[Ziyu] : INIT_POINT -> [-3, -3]
+[Ziyu] : TOLERANCE -> 1e-05
+[Ziyu] : The iteration count is: 34
+[Ziyu] : The result of x is: [-2.73631063e-08 -2.25103730e-10]
+[Ziyu] : The result of f(x) is: 7.48807137859034E-16
+
+
+[Ziyu] : Gradient method with backtracking Adagrad
+[Ziyu] : m = 15
+[Ziyu] : INIT_POINT -> [-3, -3]
+[Ziyu] : TOLERANCE -> 1e-05
+[Ziyu] : The iteration count is: 44
+[Ziyu] : The result of x is: [-8.95489806e-08 -2.33994023e-11]
+[Ziyu] : The result of f(x) is: 8.01902016969007E-15
+
+
+[Ziyu] : Gradient method with backtracking Adagrad
+[Ziyu] : m = 25
+[Ziyu] : INIT_POINT -> [-3, -3]
+[Ziyu] : TOLERANCE -> 1e-05
+[Ziyu] : The iteration count is: 62
+[Ziyu] : The result of x is: [-3.32081492e-07 -7.45659363e-13]
+[Ziyu] : The result of f(x) is: 1.10278093082310E-13
+

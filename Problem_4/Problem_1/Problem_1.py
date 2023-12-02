@@ -1,3 +1,4 @@
+
 def golden_section_method(
         func, x_l: float, x_r: float, tol: float, maxit: int):
     phi = (3 - 5**0.5) / 2  # Golden ratio
@@ -20,11 +21,13 @@ def golden_section_method(
 
     return ((x_res, func_val))
 
+
 def f(x):
     a = (1/4) * (x**2 - 1)**2
     b = (1/2) * (x - 2)**2
     res = a + b
     return res
+
 
 # Main
 if __name__ == "__main__":
@@ -34,7 +37,7 @@ if __name__ == "__main__":
     maxit = 100
     x_res, func_val = golden_section_method(f, x_left, x_right, tol, maxit)
 
-''' OUTPUT:
+'''
 The result of x is: 1.2599213332006465
 The result of f(x) is: 0.36011842515788134
 '''

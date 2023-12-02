@@ -1,0 +1,53 @@
+[Ziyu] : Global Newton's Method
+[Ziyu] : INIT_POINT -> [-1.  -0.5]      
+[Ziyu] : TOLERANCE -> 1e-07
+[Ziyu] : using newton's method at iter 1
+[Ziyu] : alpha_k == 1 at iter 1
+[Ziyu] : using newton's method at iter 2
+[Ziyu] : using newton's method at iter 3
+[Ziyu] : alpha_k == 1 at iter 3
+[Ziyu] : using newton's method at iter 4
+[Ziyu] : using newton's method at iter 5
+[Ziyu] : alpha_k == 1 at iter 5
+[Ziyu] : using newton's method at iter 6
+[Ziyu] : alpha_k == 1 at iter 6
+[Ziyu] : using newton's method at iter 7
+[Ziyu] : alpha_k == 1 at iter 7
+[Ziyu] : using newton's method at iter 8
+[Ziyu] : using newton's method at iter 9
+[Ziyu] : alpha_k == 1 at iter 9
+[Ziyu] : using newton's method at iter 10
+[Ziyu] : alpha_k == 1 at iter 10
+[Ziyu] : using newton's method at iter 11
+[Ziyu] : alpha_k == 1 at iter 11
+[Ziyu] : using newton's method at iter 12
+[Ziyu] : using newton's method at iter 13
+[Ziyu] : alpha_k == 1 at iter 13
+[Ziyu] : using newton's method at iter 14
+[Ziyu] : alpha_k == 1 at iter 14
+[Ziyu] : using newton's method at iter 15
+[Ziyu] : alpha_k == 1 at iter 15
+[Ziyu] : using newton's method at iter 16
+[Ziyu] : alpha_k == 1 at iter 16
+[Ziyu] : using newton's method at iter 17
+[Ziyu] : alpha_k == 1 at iter 17
+[Ziyu] : using newton's method at iter 18
+[Ziyu] : alpha_k == 1 at iter 18
+[Ziyu] : using newton's method at iter 19
+[Ziyu] : alpha_k == 1 at iter 19
+[Ziyu] : using newton's method at iter 20
+[Ziyu] : alpha_k == 1 at iter 20
+[Ziyu] : using newton's method at iter 21
+[Ziyu] : alpha_k == 1 at iter 21
+[Ziyu] : The iteration count is: 21
+[Ziyu] : The result of x is: [1. 1.]
+[Ziyu] : The result of f(x) is: 7.81588593751006E-29
+
+
+[Ziyu] : Gradient method with backtracking Armijo
+[Ziyu] : INIT_POINT -> [-1.  -0.5]
+[Ziyu] : TOLERANCE -> 1e-07
+[Ziyu] : The iteration count is: 1000
+[Ziyu] : The result of x is: [1.1499643  1.32353454]
+[Ziyu] : The result of f(x) is: 0.0226139816063722  
+
