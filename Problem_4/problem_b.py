@@ -25,8 +25,13 @@ if __name__ == "__main__":
 
     # more init point
     x_point_list = [[-3, -3], [3, -3], [-3, 3], [3, 3]]
+    x_records = []
     for i in range(len(x_point_list)):
         x0 = np.array(x_point_list[i])
         x_res, func_val, x_record, y_record = newton_glob(
             main_func, grad, x_symbol, x0, tol, GNT_method_para)
+        x_records.append(x_record)
+        
+    title_info = "[Ziyu]_newton_all_in_one"
+    new_contourPlot(x_records, title_info)
 
